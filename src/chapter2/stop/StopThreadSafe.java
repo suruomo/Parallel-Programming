@@ -1,7 +1,7 @@
 package chapter2.stop;
 
 /**
- * 使用stop终止线程安全示例：自行决定何时终止
+ * 使用stop终止线程安全示例1：自行决定何时终止
  * @author 苏若墨
  */
 
@@ -39,7 +39,7 @@ public class StopThreadSafe {
                     '}';
         }
     }
-    public static class WriteThread implements Runnable{
+    public static class WriteThread extends Thread{
         //自行设置停止标志位
         volatile boolean stopMe=false;
         public void setStopMe(){
@@ -85,10 +85,10 @@ public class StopThreadSafe {
     public static void main(String[] args) throws InterruptedException {
         new Thread(new ReadThread()).start();
         while (true){
-            Thread thread=new Thread(new WriteThread());
+            WriteThread thread=new WriteThread();
             thread.start();
             Thread.sleep(150);
-            new WriteThread().setStopMe();
+            thread.setStopMe();
         }
     }
 
