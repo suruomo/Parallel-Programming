@@ -1,4 +1,4 @@
-package chapter3.reenterlock;
+package chapter3.synctrl.reenterlock;
 
 import java.util.concurrent.locks.ReentrantLock;
 

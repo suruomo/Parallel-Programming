@@ -1,8 +1,5 @@
-package chapter3.reenterlock;
+package chapter3.synctrl.reenterlock;
 
-import jdk.management.resource.internal.inst.ThreadRMHooks;
-
-import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 

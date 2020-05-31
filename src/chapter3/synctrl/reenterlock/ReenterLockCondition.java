@@ -1,6 +1,4 @@
-package chapter3.reenterlock;
-
-import org.omg.PortableServer.THREAD_POLICY_ID;
+package chapter3.synctrl.reenterlock;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
