@@ -16,11 +16,13 @@ public class ReenterLockCondition implements Runnable{
     public void run() {
         reentrantLock.lock();
         try{
+            System.out.println("等待中");
             condition.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }finally {
             reentrantLock.unlock();
+            System.out.println("唤醒结束");
         }
     }
 
